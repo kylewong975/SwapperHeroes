@@ -1,0 +1,12 @@
+.hoverDark:hover {
+    background: #076CA6;
+}
+.hoverDark {
+    background: #0096EB;
+    border-radius: 1510px;
+    border: none;
+    padding: 10px 40px;
+    color: white;
+    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2);
+    font-family: "Roboto";
+}
