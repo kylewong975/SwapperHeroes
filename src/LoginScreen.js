@@ -31,8 +31,12 @@ export default class LoginScreen extends Component {
       }
 
       setInterval(() => {
-        this.renderResult();
+        console.log(this.state.ready);
+        if(this.state.ready)
+          this.renderResult();
       }, 2000);
+
+      this.triggerReady = this.triggerReady.bind(this);
     }
 
     componentDidMount() {
@@ -51,13 +55,20 @@ export default class LoginScreen extends Component {
       });
     }
 
+    triggerReady(e) {
+      e.preventDefault();
+      this.setState({
+        ready: true
+      });
+    }
+
     render() {
         return (
             <Container fluid style={{height: "100vh"}}>
                 <Row style={{height: "100vh"}}>
                     <Col style={{background: "linear-gradient(218.66deg, #F97090 22.12%, #AF0707 93.89%)", color: "white"}}>
                         <LandingScreen/>
-                        
+                        <input type="submit" value="Swap to superhero!" style={styles.formButton} onClick={this.triggerReady} />
                     </Col>
                     <Col xs="4" style={{paddingLeft: 30, paddingRight: 10, paddingBottom: 50, display: "flex", height: "100%", background: "linear-gradient(218.66deg, #2A57B8 48.12%, #0096EB 93.89%)"}}>
                         <div style={{...styles.loginBox, ...styles.overflowCond}}>
@@ -79,7 +90,6 @@ let styles = {
         display: "flex",
         justifyContent: "center",
         position: "fixed",
-        //background: `rgba(245, 245, 245, 1)`,
         border: "1px solid grey",
     },
     loginBox: {
@@ -119,5 +129,13 @@ let styles = {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+    },
+    formButton: {
+      width: "40%",
+      backgroundColor: "#FFFFFF",
+      margin: 5,
+      borderRadius: "25%",
+      border: "none",
+      fontFamily: "Signika Negative"
     },
 };
