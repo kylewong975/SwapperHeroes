@@ -30,13 +30,18 @@ export default class LoginScreen extends Component {
         ready: false,
         initialCond: true,
         initText: "",
+        loadedPhoto: false,
       }
 
       setInterval(() => {
-        console.log(this.state.initText)
-        if(this.state.ready)
+        if(this.state.ready && this.state.loadedPhoto)
           this.renderResult();
       }, 2000);
+      setInterval(() => {
+        this.setState({
+          loadedPhoto: true
+        })
+      }, 5000);
 
       this.triggerReady = this.triggerReady.bind(this);
     }

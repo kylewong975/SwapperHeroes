@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import Logo from './haoyu04042.png';
+import Logo1 from './haoyu04054.png';
+import Logo2 from './haoyu00202.png';
+import Logo3 from './haoyu00325.png';
+import Logo4 from './haoyu00373.png';
+import Logo5 from './haoyu00394.png';
+import Logo6 from './haoyu00514.png';
+import Logo7 from './haoyu00559.png';
+import Logo8 from './haoyu00751.png';
+import Logo9 from './haoyu00880.png';
+import Logo10 from './haoyu00937.png';
+import Logo11 from './haoyu00991.png';
+import Logo12 from './haoyu01354.png';
+import Logo13 from './haoyu01474.png';
+import Logo14 from './haoyu01651.png';
 
 export default class LandingScreen extends Component {
     constructor(props) {
@@ -13,7 +27,7 @@ export default class LandingScreen extends Component {
         title1: "",
         title2: "",
         title3: "",
-        price1: "$15.88",
+        price1: "",
         price2: "",
         price3: "",
         img1: "",
@@ -24,11 +38,31 @@ export default class LandingScreen extends Component {
         link3: "",
         loadedPhoto: false,
         loadedOutfit: false,
+        refreshPhoto: false,
+        randNum: 0,
+        logos: [],
       }
+
+      this.state.logos.push(<img src={Logo} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo1} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo2} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo3} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo4} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo5} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo6} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo7} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo8} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo9} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo10} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo11} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo12} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo13} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      this.state.logos.push(<img src={Logo14} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
 
       setInterval(() => {
         this.setState({
-          loadedPhoto: true
+          loadedPhoto: true,
+          randNum: parseInt(Math.random() * this.state.logos.length)
         })
       }, 5000);
       setInterval(() => {
@@ -67,6 +101,10 @@ export default class LandingScreen extends Component {
       });
     }
 
+    renderImg() {
+      return this.state.logos[this.state.randNum];
+    }
+
     render() {
         return(
             <Container fluid>
@@ -89,7 +127,7 @@ export default class LandingScreen extends Component {
                                         <Col>
                                             <h2>Current Photo</h2>
                                             <div style={{height: 600, width: 450}}>
-                                              <img src={Logo} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />
+                                              {this.renderImg()}
                                             </div>
                                         </Col> : null}
                                         {this.state.loadedOutfit ?
