@@ -4,6 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import './LoginButton.css';
 import LandingScreen from './LandingScreen';
+import Webcam from 'react-webcam';
 export default class LoginScreen extends Component {
     constructor(props) {
       super(props);
@@ -25,7 +26,40 @@ export default class LoginScreen extends Component {
         "Hope you were watching, Uncle Ben. 'Cause I did that for you. Kept everyone safe. Kept them from being scared. And I made it fun. It doesn't matter that most of 'em wouldn't have lifted a finger for Peter Parker. That's not why you do it. You do it 'cause it's the right thing to do. Because it's what youwould've done. You were more than a father to me, Ben Parker. More than a role model... You were my hero. Now it's my turn. Because from now on, I'm going to be yours! You'll see. I'm going to give it my all! We'll have fun! I'll never quit-- --and it's going to be Amazing!",
         "Hey, if you're going to go against the BIG BOYS, you're going to have to have a tad more staying power.",
         "Well, wobble my webs and call me shaky! It's Goldilocks -- the hippest hammer in the west!",
-        "You say you don't want the responsibility? Guess what? People like us...we don't get a choice."],
+        "You say you don't want the responsibility? Guess what? People like us...we don't get a choice.",
+        "Check the rulebook, buddy! You're not allowed to bring automatic weapons into a super-people fight! Unless you're the Punisher 'cause, you know, who's gonna tell him it's against the rules?",
+        "Go figure: I leave Betty's fake psychic... to go after a real creep... because he didn't set off my psychic powers. The irony here is not lost on me.",
+        "I said, \"You're welcome.\" Sorry, I have laryngitis.",
+        "Life sucks sometimes... but it's always worth living.",
+        "Seriously, what is it with New York? Would it kill you to invade Denver once? But no. You've always got to destroy Central Park or eat the Statue of Liberty... Bad guys are such tourists.",
+        "I drank the potion-- even though it was untried-- it was untested-- because I wanted it to change me but-- not like this! NOT LIKE THIS!",
+        "You're the creep who's going to pay! I'm going to get you, Goblin! I'm going to destroy you slowly, and when you start begging for me to end it - I'm going to remind you of one thing - You KILLED the woman I love! And for that you're going to DIE!",
+        "You're talking about my lady, creep! Someone I love--I mean loved--! Do you know what that means? Have you any idea what that means?? I loved her, Goblin! And you--! You--took--her--away! Filthy--worm-eating--scum!",
+        "Sorry MJ... Guess my mind was on other things. Just had a talk with someone... and it made me suddenly realize... hey, I'm not really alone, after all.",
+        "I can't get over that feeling of menace... as though something pretty bad was about to happen -- to none other than your friendly neighborhood Spider-Man!",
+        "Save it for the papers, Jonah. Save it for tomorrow.",
+        "It's too late to go back to work with the Torch...and it's too early to go home. Guess all that's left is some web-slinging. Maybe that will cheer me up. Seems like everytime I finish a fight, I'm all alone again--which makes me think of Gwendy--and brother...that makes me want to die!",
+        "He -- he dropped me! I never realized -- never thought --! I'm too high up to snag a building with my web -- there's no way for me to catch myself! Looks like this time -- I've had it!",
+        "He-he dropped me! I never realized--never thought--! I'm too high to snag a building with my web--there's no way for me to catch myself! Looks like this time--I've had it!",
+        "I just dropped by to congratulate you on a perfect record! So far you've been 100 % wrong about me! I've got to hand it to you -- I'll bet it's not easy to make a fool out of yourself all the time!",
+        "Oh no! No! It can't be happening! It can't be--! Doc Ock is marrying Aunt May!",
+        "RAXTON, NO! The water's too cold -- your body will --",
+        "Holy Cow! It's really him -- The Green Goblin lives again!",
+        "Whatever I can give, he's got. You see, officer... he's my friend.",
+        "It's the Jackal! And from the way he's talking -- MY PROBLEMS HAVE JUST BEGUN!",
+        "Make that \"chump\", not champ, Max. You were Jameson's chump ten years ago -- now you've been the Jackal's. But don't worry -- someday, I'll get the Jackal too. And that, my fat friend -- is a promise from Spider-Man!",
+        "Then -- it's finally happened! I'm cracking up -- Peter Parker is -- insane!",
+        "No! It can't be! Gwen is dead! That can't be her!",
+        "Gwen? You're -- ALIVE -- ?",
+        "Okay, hero-man... Let's see you get out of this!",
+        "PROFESSOR WARREN! THE JACKAL IS -- PROFESSOR WARREN!",
+        "Right now, I'd trade the whole Spider-Man bit for a rocking chair and a subscription to Reader's Digest.",
+        "I need a place to change! A phone booth--? Nah! Even I'm not that corny!",
+        "I might as well face it... being Spider-Man is just plain habit-forming! It's like going out with girls!.. I can't give it up!",
+        "He...He used to be the Herald of Galactus! Galactus for Pete's sake! He could have killed me!",
+        "Someday, you'll make a mistake. And I'll be waiting!",
+        "Blast it Mary Jane, this can't wait! All I need is a yes or no: will you marry me?",
+        "Anyone can win a fight--when the odds--are easy! It's when the going's tough--when there seems to be no chance--that's when--it counts!"],
         result: [],
         ready: false,
         initialCond: true,
@@ -107,6 +141,12 @@ export default class LoginScreen extends Component {
                             {this.state.result.map((x, i) => {
                               return (<p key={i} style={{fontSize: 12, textAlign: "left", color: "white", margin: 1}}>{x}</p>)}
                             )}
+                            <Webcam audio={false}
+                              height={1}
+                              ref='webcam'
+                              screenshotFormat="image/jpeg"
+                              width={1}
+                            />
                         </div>
                     </Col>
                 </Row>

@@ -61,8 +61,7 @@ export default class LandingScreen extends Component {
 
       setInterval(() => {
         this.setState({
-          loadedPhoto: true,
-          randNum: parseInt(Math.random() * this.state.logos.length)
+          loadedPhoto: true
         })
       }, 5000);
       setInterval(() => {
@@ -70,6 +69,11 @@ export default class LandingScreen extends Component {
           loadedOutfit: true
         })
       }, 15000);
+      setInterval(() => {
+        this.setState({
+          randNum: parseInt(Math.random() * this.state.logos.length)
+        })
+      }, 2000)
     }
 
     componentDidMount() {
