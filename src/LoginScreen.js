@@ -129,11 +129,11 @@ export default class LoginScreen extends Component {
         return (
             <Container fluid style={{height: "100vh"}}>
                 <Row style={{height: "100vh"}}>
-                    <Col style={{background: "linear-gradient(218.66deg, #F97090 22.12%, #AF0707 93.89%)", color: "white"}}>
+                    <Col xs="8" style={{background: "linear-gradient(218.66deg, #F97090 22.12%, #AF0707 93.89%)", color: "white"}}>
                         <LandingScreen status={this.state.ready}/>
                         <input type="submit" value="Swap to superhero!" style={styles.formButton} onClick={this.triggerReady} />
                     </Col>
-                    <Col xs="4" style={{paddingLeft: 30, paddingRight: 10, paddingBottom: 50, display: "flex", height: "100%", background: "linear-gradient(218.66deg, #2A57B8 48.12%, #0096EB 93.89%)"}}>
+                    <Col xs="2" style={{paddingLeft: 30, paddingRight: 10, paddingBottom: 50, display: "flex", height: "100%", background: "linear-gradient(218.66deg, #2A57B8 48.12%, #0096EB 93.89%)"}}>
                         <div style={{...styles.loginBox, ...styles.overflowCond}}>
                             <h1 style={{textAlign: "center", color: "white", fontFamily: "Signika Negative"}}>Story Generator</h1>
                             <br/>
@@ -148,6 +148,9 @@ export default class LoginScreen extends Component {
                               width={1}
                             />
                         </div>
+                    </Col>
+                    <Col xs="2" style={{backgroundColor: "#2A57B8"}}>
+                        <iframe style={{width: "100%", height: "100%"}} src='https://webchat.botframework.com/embed/SpiderFan?s=NLzutvwktQQ.cwA.bAw.gXRMU7ILbc2bdSb268ZPzb5AGTV7NI57fGBIQDp_dI8'></iframe>
                     </Col>
                 </Row>
             </Container>
