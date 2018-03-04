@@ -123,7 +123,7 @@ export default class LandingScreen extends Component {
                     <Col xs="10">
                         <Row>
                             <Col style={{marginBottom: 25}}>
-                                <h1 style={{marginBottom: 25, fontFamily: "Signika Negative"}}>SwapBoard</h1>
+                                <h1 style={{marginBottom: 25, fontFamily: "Signika Negative"}}>SwapperHeroes</h1>
                                 <p style={{fontFamily: "Signika Negative",}}><i>This is your dashboard showing potential outfits you would like, as well as a story generator producing a story based on your actions captured. Simply press the button below to begin and stop recording. The Marvel smart assistant will generate a story for you as you perform cool moves from superheroes like Spiderman!</i></p>
                                 <hr style={{borderColor: "#ffffff"}} />
                             </Col>
