@@ -28,10 +28,12 @@ export default class LoginScreen extends Component {
         "You say you don't want the responsibility? Guess what? People like us...we don't get a choice."],
         result: [],
         ready: false,
+        initialCond: true,
+        initText: "",
       }
 
       setInterval(() => {
-        console.log(this.state.ready);
+        console.log(this.state.initText)
         if(this.state.ready)
           this.renderResult();
       }, 2000);
@@ -40,7 +42,29 @@ export default class LoginScreen extends Component {
     }
 
     componentDidMount() {
-
+      if(this.state.initialCond) {
+        this.setState({
+          initialCond: false,
+        });
+        let apikey = "59bae137365787d02c92409da8cc971e";
+        let comicID = 16926;
+        let hero = "Spider-Man";
+        let url = `https://developer.marvel.com:443/v1/public/comics/${comicID}/characters?name=${hero}&apikey=${apikey}`;
+        fetch(url, {
+          method: 'get',
+          headers: {
+            'Authorization': "Bearer 3a93dd16bf5d57569d8e96ab298f35c1d36d1fae",
+            'Access-Control-Allow-Origin': "*",
+            'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, PATCH, DELETE',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+          }
+        })
+        .then((res) => {
+          this.setState({
+            initText: "Jack Kirby and Steve Ditko collaborated on this cover to create what is quite possibly the most iconic image in Marvel Comics' history.  Before all the clones, symbiotes and civil wars we see Spider-Man in a simpler time doing what he does best, catching crooks and saving the day."
+          })
+        })
+      }
     }
 
     randomLine() {
@@ -74,6 +98,7 @@ export default class LoginScreen extends Component {
                         <div style={{...styles.loginBox, ...styles.overflowCond}}>
                             <h1 style={{textAlign: "center", color: "white", fontFamily: "Signika Negative"}}>Story Generator</h1>
                             <br/>
+                            {this.state.initialCond ? null : <p style={{fontSize: 12, textAlign: "left", color: "#FFFFFF"}}>Jack Kirby and Steve Ditko collaborated on this cover to create what is quite possibly the most iconic image in Marvel Comics history.  Before all the clones, symbiotes and civil wars we see Spider-Man in a simpler time doing what he does best, catching crooks and saving the day.</p>}
                             {this.state.result.map((x, i) => {
                               return (<p key={i} style={{fontSize: 12, textAlign: "left", color: "white", margin: 1}}>{x}</p>)}
                             )}
