@@ -22,7 +22,20 @@ export default class LandingScreen extends Component {
         link1: "",
         link2: "",
         link3: "",
+        loadedPhoto: false,
+        loadedOutfit: false,
       }
+
+      setInterval(() => {
+        this.setState({
+          loadedPhoto: true
+        })
+      }, 5000);
+      setInterval(() => {
+        this.setState({
+          loadedOutfit: true
+        })
+      }, 15000);
     }
 
     componentDidMount() {
@@ -70,13 +83,16 @@ export default class LandingScreen extends Component {
                         <Row>
                             <Col>
                                 <Container fluid style={{fontFamily: "Signika Negative",}}>
+                                {this.props.status ?
                                     <Row style={{height: 500}}>
+                                      {this.state.loadedPhoto ?
                                         <Col>
                                             <h2>Current Photo</h2>
                                             <div style={{height: 600, width: 450}}>
                                               <img src={Logo} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />
                                             </div>
-                                        </Col>
+                                        </Col> : null}
+                                        {this.state.loadedOutfit ?
                                         <Col style={{overflowY: "scroll"}}>
                                             <h2>Outfit Suggestions</h2>
                                             <div style={{padding: 10, border: "1px solid white"}}>
@@ -100,8 +116,8 @@ export default class LandingScreen extends Component {
                                               </div>
                                               <p>Price: {this.state.price3}</p>
                                             </div>
-                                        </Col>
-                                    </Row>
+                                        </Col> : null}
+                                    </Row> : null}
                                 </Container>
                             </Col>
                         </Row>
