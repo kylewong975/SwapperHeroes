@@ -5,6 +5,10 @@ import { Container, Row, Col } from 'reactstrap';
 import './LoginButton.css';
 import LandingScreen from './LandingScreen';
 export default class LoginScreen extends Component {
+    constructor(props) {
+      super(props)
+    }
+
     render() {
         return (
             <Container fluid style={{height: "100vh"}}>
