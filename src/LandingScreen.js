@@ -22,6 +22,7 @@ import Logo14 from './haoyu01651.png';
 import Logo from './spider001.png';
 import Logo1 from './spider002.png';
 import Logo2 from './spider003.png';
+import Logo3 from './spider004.png';
 
 export default class LandingScreen extends Component {
     constructor(props) {
@@ -51,8 +52,8 @@ export default class LandingScreen extends Component {
       this.state.logos.push(<img src={Logo} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo1} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo2} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      /*
       this.state.logos.push(<img src={Logo3} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
+      /*
       this.state.logos.push(<img src={Logo4} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo5} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo6} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
