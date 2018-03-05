@@ -1,6 +1,11 @@
+# SwapperHeroes
+
 Did you love superheroes in your youth?
+
 Have you looked up to superheroes such as Spiderman or Batman?
+
 Wouldn't it be amazing to see what your daughter as Wonder Woman or your son as The Incredible Hulk?
+
 
 With SwapperHeroes, you can do just that! Trained with state-of-the-art Cycle-GAN (Zhu et al., 2017) architecture, SwapperHeroes can transform videos of anyone into those of superheroes to real time.
 
