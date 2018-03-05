@@ -2,27 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
-/*
-import Logo from './haoyu04042.png';
-import Logo1 from './haoyu04054.png';
-import Logo2 from './haoyu00202.png';
-import Logo3 from './haoyu00325.png';
-import Logo4 from './haoyu00373.png';
-import Logo5 from './haoyu00394.png';
-import Logo6 from './haoyu00514.png';
-import Logo7 from './haoyu00559.png';
-import Logo8 from './haoyu00751.png';
-import Logo9 from './haoyu00880.png';
-import Logo10 from './haoyu00937.png';
-import Logo11 from './haoyu00991.png';
-import Logo12 from './haoyu01354.png';
-import Logo13 from './haoyu01474.png';
-import Logo14 from './haoyu01651.png';
-*/
-import Logo from './spider001.png';
-import Logo1 from './spider002.png';
-import Logo2 from './spider003.png';
-import Logo3 from './spider004.png';
+
+import Logo from './spiderman/spider001.png';
+import Logo1 from './spiderman/spider002.png';
+import Logo2 from './spiderman/spider003.png';
+import Logo3 from './spiderman/spider004.png';
 
 export default class LandingScreen extends Component {
     constructor(props) {
@@ -53,19 +37,6 @@ export default class LandingScreen extends Component {
       this.state.logos.push(<img src={Logo1} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo2} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
       this.state.logos.push(<img src={Logo3} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      /*
-      this.state.logos.push(<img src={Logo4} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo5} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo6} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo7} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo8} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo9} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo10} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo11} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo12} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo13} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      this.state.logos.push(<img src={Logo14} style={{maxWidth: "100%", maxHeight: "100%", border: "1px solid black"}} />)
-      */
 
       setInterval(() => {
         this.setState({
@@ -88,7 +59,7 @@ export default class LandingScreen extends Component {
       let query = this.state.keyword;
       let maxItems = 3;
       //let url = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${query}&limit=${maxItems}`;
-      let url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=drone&limit=3";
+      let url = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${query}&limit=${maxItems}`;
       fetch(url, {
         method: 'get',
         headers: {
